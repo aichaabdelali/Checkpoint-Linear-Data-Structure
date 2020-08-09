@@ -1,0 +1,46 @@
+ALGORITHM Prob1_sumOfDistinct_arr
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[5];
+    i, j : INTEGER;
+    sum : INTEGER :=0;
+BEGIN
+    Read (arr1, arr2)
+    FOR i FROM 0 TO arr1.length-1 DO
+        FOR j FROM 0 TO arr2.length-1  DO
+            IF (arr1[i] <> arr2[j]) THEN
+                sum := sum + arr1[i];
+            END_IF
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO arr2.length-1 DO
+        FOR i FROM 0 TO arr1.length-1  DO
+            IF (arr1[i] <> arr2[j]) THEN
+                sum := sum + arr2[j];
+            END_IF
+        END_FOR
+    END_FOR
+    Write (sum)
+END
+
+ALGORITHM Prob2_sumOfSame_arr
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[5];
+    i, j : INTEGER;
+    sum : INTEGER :=0;
+BEGIN
+    FOR i FROM 0 TO arr1.length-1 DO
+        FOR j FROM 0 TO arr2.length-1  DO
+            IF (arr1[i] = arr2[j]) THEN
+                sum := sum + arr1[i];
+            END_IF
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO arr2.length-1 DO
+        FOR i FROM 0 TO arr1.length-1  DO
+            IF (arr1[i] = arr2[j]) THEN
+                sum := sum + arr2[j];
+            END_IF
+        END_FOR
+    END_FOR
+    Write (sum)
+END

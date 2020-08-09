@@ -1,0 +1,67 @@
+ALGORITHM Prob1_sumOfDistinct_htab
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[5];
+    set_keys : ARRAY_OF INTEGER[10];
+    i, count : INTEGER;
+    sum : INTEGER := 0;
+    htable : HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    Read (arr1, arr2)
+    FOR i FROM 0 TO arr1.length -1  DO
+        IF (dict.lookup(arr1[i]) = TRUE) THEN
+            count := dict.get(set1[i]);
+            dict.insert(set1[i],count+1);
+        ELSE
+            dict.insert(set1[i],1);
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO arr2.length -1 STEP 1  DO
+        IF (dict.lookup(arr2[i]) = TRUE) THEN
+            count := dict.get(arr2[i]);
+            dict.insert(arr2[i],count+1);
+        ELSE
+            dict.insert(arr2[i],1);
+        END_IF
+    END_FOR
+    set_keys := dict.getKeys();
+    FOR i FROM 0 TO set_keys.length -1 STEP 1  DO
+        IF (dict.get(set_keys[i]) = 1) THEN
+            sum := sum +set_keys[i];
+        END_IF
+    END_FOR
+    Write (sum)
+END
+
+ALGORITHM Prob2_sumOfSame_htab
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[5];
+    set_keys : ARRAY_OF INTEGER[10];
+    i, count : INTEGER;
+    sum : INTEGER := 0;
+    htable : HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    Read (arr1, arr2)
+    FOR i FROM 0 TO arr1.length -1  DO
+        IF (dict.lookup(arr1[i]) = TRUE) THEN
+            count := dict.get(set1[i]);
+            dict.insert(set1[i],count+1);
+        ELSE
+            dict.insert(set1[i],1);
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO arr2.length -1 STEP 1  DO
+        IF (dict.lookup(arr2[i]) = TRUE) THEN
+            count := dict.get(arr2[i]);
+            dict.insert(arr2[i],count+1);
+        ELSE
+            dict.insert(arr2[i],1);
+        END_IF
+    END_FOR
+    set_keys := dict.getKeys();
+    FOR i FROM 0 TO set_keys.length -1 STEP 1  DO
+        IF (dict.get(set_keys[i]) = 2) THEN
+            sum := sum +set_keys[i];
+        END_IF
+    END_FOR
+    Write (sum)
+END
